@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
             
             print(data)
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

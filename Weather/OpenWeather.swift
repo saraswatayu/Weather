@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReactiveCocoa
 
 final class OpenWeather {
     
