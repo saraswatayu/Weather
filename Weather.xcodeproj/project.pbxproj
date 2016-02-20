@@ -14,6 +14,7 @@
 		2ADE95621C76F64B00395BF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ADE95601C76F64B00395BF3 /* LaunchScreen.storyboard */; };
 		2ADE956D1C76F64B00395BF3 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE956C1C76F64B00395BF3 /* WeatherTests.swift */; };
 		2ADE95781C76F64B00395BF3 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE95771C76F64B00395BF3 /* WeatherUITests.swift */; };
+		2ADE95861C76F7B400395BF3 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE95851C76F7B400395BF3 /* OpenWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2ADE95731C76F64B00395BF3 /* WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADE95771C76F64B00395BF3 /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		2ADE95791C76F64B00395BF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ADE95851C76F7B400395BF3 /* OpenWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2ADE95571C76F64B00395BF3 /* AppDelegate.swift */,
+				2ADE95851C76F7B400395BF3 /* OpenWeather.swift */,
 				2ADE95591C76F64B00395BF3 /* ViewController.swift */,
 				2ADE955B1C76F64B00395BF3 /* Main.storyboard */,
 				2ADE955E1C76F64B00395BF3 /* Assets.xcassets */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ADE95861C76F7B400395BF3 /* OpenWeather.swift in Sources */,
 				2ADE955A1C76F64B00395BF3 /* ViewController.swift in Sources */,
 				2ADE95581C76F64B00395BF3 /* AppDelegate.swift in Sources */,
 			);

@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let openWeatherAPI = OpenWeather(key: "c0dc8424266dd7a65999bad7f9632a88")
+        openWeatherAPI.weather(city: "New York City, NY") {
+            (data, error) -> Void in
+            
+            print(data)
+        }
     }
 
     override func didReceiveMemoryWarning() {
