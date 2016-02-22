@@ -11,42 +11,56 @@ import ReactiveCocoa
 
 final class OpenWeather {
     
-    typealias OpenWeatherCompletionHandler = (AnyObject?, NSError?) -> ()
+    typealias OpenWeatherRequestCompletionHandler = ([String: AnyObject]?, NSError?) -> ()
+    typealias OpenWeatherCompletionHandler = (Weather?) -> ()
     
     private let baseURL = "http://api.openweathermap.org/data/2.5"
     
-    private let key: String
-    private let session: NSURLSession
-
-    init(key: String) {
-        self.key = key
-        session = NSURLSession.sharedSession()
+    private var key: String {
+        return Constants.OpenWeatherAPIKey
     }
  
-    private func request(endpoint: String, parameters: [String: String], completionHandler: OpenWeatherCompletionHandler? = nil) {
-        let url = NSURL(string: "\(baseURL)/\(endpoint)?\(parameters.stringFromHttpParameters())")
+    private func request(endpoint: String, parameters: [String: String], completionHandler: OpenWeatherRequestCompletionHandler? = nil) {
+        
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "\(baseURL)/\(endpoint)?APPID=\(key)&\(parameters.stringFromHttpParameters())")
+        
         if let url = url {
             let request = NSURLRequest(URL: url)
-            session.dataTaskWithRequest(request) {
+            let dataTask = session.dataTaskWithRequest(request) {
                 (data, urlResponse, error) -> Void in
                 if let error = error {
                     completionHandler?(nil, error)
                 } else if let data = data {
                     do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                        let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject]
                         completionHandler?(json, nil)
                     } catch let error as NSError {
                         completionHandler?(nil, error)
                     }
                 }
-            }.resume()
+            }
+            
+            dataTask.resume()
         }
+        
     }
 
     func weather(city city: String, completionHandler: OpenWeatherCompletionHandler? = nil) {
-        request("weather", parameters: ["q": city, "APPID": key], completionHandler: completionHandler)
+        request("weather", parameters: ["q": city]) {
+            (json, error) -> Void in
+            if let _ = error {
+                completionHandler?(nil)
+            } else if let json = json {
+                let weather = Weather(json: json)
+                completionHandler?(weather)
+            }
+        }
     }
     
+    static func sharedInstance() -> OpenWeather {
+        return OpenWeather()
+    }
 }
 
 extension String {
