@@ -7,15 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A13DFB81C7836AA009FC99D /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13DFB61C7836AA009FC99D /* ReactiveCocoa.framework */; };
-		2A13DFB91C7836AA009FC99D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13DFB71C7836AA009FC99D /* Result.framework */; };
 		2A4FB4881C7A35970082B032 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4FB4871C7A35970082B032 /* CityCell.swift */; };
 		2AC074041C7A5146006C7367 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC074031C7A5146006C7367 /* BubbleTransition.swift */; };
 		2ADBDF0A1C79099F00B809EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBDF091C79099F00B809EF /* Constants.swift */; };
-		2ADBDF0B1C791CCE00B809EF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13DFB61C7836AA009FC99D /* ReactiveCocoa.framework */; };
-		2ADBDF0C1C791CCE00B809EF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13DFB61C7836AA009FC99D /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2ADBDF0D1C791CCE00B809EF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13DFB71C7836AA009FC99D /* Result.framework */; };
-		2ADBDF0E1C791CCE00B809EF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13DFB71C7836AA009FC99D /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2ADBDF111C791F1400B809EF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBDF101C791F1400B809EF /* Weather.swift */; };
 		2ADBDF131C79302A00B809EF /* CitySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBDF121C79302A00B809EF /* CitySelectorViewController.swift */; };
 		2ADBDF151C7930C300B809EF /* CityAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBDF141C7930C300B809EF /* CityAnimation.swift */; };
@@ -53,8 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2ADBDF0C1C791CCE00B809EF /* ReactiveCocoa.framework in Embed Frameworks */,
-				2ADBDF0E1C791CCE00B809EF /* Result.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,8 +54,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A13DFB61C7836AA009FC99D /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		2A13DFB71C7836AA009FC99D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		2A4FB4871C7A35970082B032 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		2AC074031C7A5146006C7367 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
 		2ADBDF091C79099F00B809EF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -91,10 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A13DFB81C7836AA009FC99D /* ReactiveCocoa.framework in Frameworks */,
-				2ADBDF0B1C791CCE00B809EF /* ReactiveCocoa.framework in Frameworks */,
-				2A13DFB91C7836AA009FC99D /* Result.framework in Frameworks */,
-				2ADBDF0D1C791CCE00B809EF /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,15 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A13DFB51C783630009FC99D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2A13DFB61C7836AA009FC99D /* ReactiveCocoa.framework */,
-				2A13DFB71C7836AA009FC99D /* Result.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2ADE954B1C76F64A00395BF3 = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +108,6 @@
 				2ADE956B1C76F64B00395BF3 /* WeatherTests */,
 				2ADE95761C76F64B00395BF3 /* WeatherUITests */,
 				2ADE95551C76F64A00395BF3 /* Products */,
-				2A13DFB51C783630009FC99D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -465,10 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.Weather;
@@ -480,10 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.Weather;
