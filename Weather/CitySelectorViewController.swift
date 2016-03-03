@@ -22,6 +22,8 @@ class CitySelectorViewController: UIViewController, UICollectionViewDataSource, 
         let top = view.frame.size.height - ((side + 15) * CGFloat(cities.count) / 3) - 30
         layout.sectionInset = UIEdgeInsets(top: top / 2, left: 15.0, bottom: top / 2, right: 15.0)
         collectionView.collectionViewLayout = layout
+        
+        navigationController?.delegate = self
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,4 +50,19 @@ class CitySelectorViewController: UIViewController, UICollectionViewDataSource, 
         controller.selectedCity = cities[(sender as! NSIndexPath).row]
     }
     
+}
+
+extension CitySelectorViewController: UINavigationControllerDelegate {
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animation = CityAnimation()
+        if fromVC is CitySelectorViewController {
+            animation.transitionMode = .Present
+        } else {
+            animation.transitionMode = .Pop
+        }
+        
+        return animation
+    }
+
 }
